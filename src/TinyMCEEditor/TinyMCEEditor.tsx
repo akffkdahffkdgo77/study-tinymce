@@ -86,7 +86,7 @@ export default function TinyMCEEditor(props: Props) {
                 }}
                 value={value}
                 onEditorChange={(editorValue, editor) => {
-                    // 최대 글자 수 설정하는 방법
+                    // 글자 수 제한
                     if (maxLength) {
                         const wordCount = editor.plugins.wordcount.body.getCharacterCount();
                         if (wordCount <= maxLength) {
@@ -102,7 +102,7 @@ export default function TinyMCEEditor(props: Props) {
                     }
                 }}
                 onBeforeAddUndo={(event, editor) => {
-                    // 최대 글자수 설정
+                    // 글자 수 제한
                     if (maxLength) {
                         const wordCount = editor.plugins.wordcount.body.getCharacterCount();
                         if (wordCount > maxLength) {
