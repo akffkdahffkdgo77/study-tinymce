@@ -1,7 +1,8 @@
+import { useEffect, useState } from 'react';
+
 import { Editor } from '@tinymce/tinymce-react';
 import { Editor as TinyEditor } from 'tinymce';
 
-import { useEffect, useState } from 'react';
 import { customOptions } from './options';
 
 interface Props extends React.HTMLAttributes<HTMLDivElement> {

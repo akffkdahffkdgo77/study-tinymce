@@ -1,7 +1,9 @@
 import { useRef, useState } from 'react';
-import { Editor as TinyEditor } from 'tinymce';
-import TinyMCEEditor from 'TinyMCEEditor';
+
 import parse from 'html-react-parser';
+import { Editor as TinyEditor } from 'tinymce';
+
+import TinyMCEEditor from 'TinyMCEEditor';
 
 function App() {
     const editorRef = useRef<TinyEditor | null>(null);

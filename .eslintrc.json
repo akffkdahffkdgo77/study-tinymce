@@ -20,7 +20,42 @@
         "react/jsx-props-no-spreading": "off",
         "react/require-default-props": "off",
         "import/no-extraneous-dependencies": "off",
-        "react/jsx-filename-extension": ["warn", { "extensions": [".js", ".jsx", ".ts", ".tsx"] }]
+        "react/jsx-filename-extension": ["warn", { "extensions": [".js", ".jsx", ".ts", ".tsx"] }],
+        "import/order": [
+            "error",
+            {
+                "groups": ["builtin", "external", "internal", ["parent", "sibling"], "index", "object", "type"],
+                "pathGroups": [
+                    {
+                        "pattern": "{react*,react*/**}",
+                        "group": "builtin",
+                        "position": "before"
+                    },
+                    {
+                        "pattern": "TinyMCEEditor/**",
+                        "group": "internal",
+                        "position": "after"
+                    },
+                    {
+                        "pattern": "{styles/**,*.+(css|scss)}",
+                        "patternOptions": {
+                            "dot": true,
+                            "nocomment": true,
+                            "matchBase": true
+                        },
+                        "group": "object",
+                        "position": "after"
+                    }
+                ],
+                "pathGroupsExcludedImportTypes": ["react"],
+                "newlines-between": "always",
+                "alphabetize": {
+                    "order": "asc",
+                    "caseInsensitive": true
+                },
+                "warnOnUnassignedImports": true
+            }
+        ]
     },
     "settings": {
         "import/resolver": {
