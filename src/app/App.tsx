@@ -5,10 +5,13 @@ import { Editor as TinyEditor } from 'tinymce';
 
 import TinyMCEEditor from 'TinyMCEEditor';
 
+import useMobile from './useMobile';
+
 function App() {
     const editorRef = useRef<TinyEditor | null>(null);
     const [editorValue, setEditorValue] = useState('');
     const [isDirty, setIsDirty] = useState(false);
+    const isMobile = useMobile();
 
     const handleClick = () => {
         if (editorRef.current) {
@@ -29,7 +32,7 @@ function App() {
                 onInit={(editor) => {
                     editorRef.current = editor;
                 }}
-                isMobile={false}
+                isMobile={isMobile}
                 initialValue="Hello!"
                 isDisabled={false}
                 maxLength={100}

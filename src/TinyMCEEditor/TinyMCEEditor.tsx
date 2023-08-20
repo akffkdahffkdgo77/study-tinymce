@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import { Editor } from '@tinymce/tinymce-react';
 import { Editor as TinyEditor } from 'tinymce';
 
-import { customOptions } from './options';
+import { customOptions, defaultOptions } from './options';
 
 interface Props extends React.HTMLAttributes<HTMLDivElement> {
     onInit: (editor: TinyEditor) => void;
@@ -19,8 +19,8 @@ export default function TinyMCEEditor(props: Props) {
     const [disabled, setDisabled] = useState(false);
     const [value, setValue] = useState('');
 
-    // 에디터 unload / load를 하지 않는 경우 disabled 상태가 풀리지 않음
-    // 내부 상태로 따로 관리해서 props로 받아오는 isDisabled값이 변경되었을 경우 업데이트하도록 useEffect로 관리
+    // 에디터 mount / unmount를 하지 않는 경우 disabled 상태가 변경되지 않음
+    // 내부 상태로 사용해서 props로 받아오는 isDisabled값이 변경되었을 경우 업데이트하도록 useEffect로 관리
     useEffect(() => {
         if (!isDisabled && disabled) {
             setDisabled(false);
@@ -31,10 +31,12 @@ export default function TinyMCEEditor(props: Props) {
         <div {...rest}>
             <Editor
                 tinymceScriptSrc={`${process.env.PUBLIC_URL}/tinymce/tinymce.min.js`}
+                // 같은 페이지에서 화면 사이즈에 맞게 options를 변경하고 싶을 경우
+                // 컴포넌트가 새로 생성되도록 key 변경
                 key={isMobile ? 'editor-mobile' : 'editor'}
                 disabled={disabled}
                 init={{
-                    ...customOptions,
+                    ...(isMobile ? defaultOptions : customOptions),
                     file_picker_callback: (callback, _filePickerValue, meta) => {
                         // file picker callback을 정의해야 이미지 업로드 기능 사용 가능
                         const input = document.createElement('input') as HTMLInputElement;
