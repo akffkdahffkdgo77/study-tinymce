@@ -1,6 +1,4 @@
-# Study TinyMCE Editor
-
-프로젝트에서 사용한 TinyMCE Editor 사용 방법에 대한 기록
+<img src="https://capsule-render.vercel.app/api?section=header&type=waving&height=300&text=Study%20Editor&color=timeGradient&fontSize=90" alt="" />
 
 ## TIL
 
