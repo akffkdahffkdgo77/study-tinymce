@@ -5,11 +5,20 @@ body {
     padding-right: 0px !important;
     margin: 20px 20px 0;
     font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: 0px;
 }
 
 /* Placeholder 스타일 변경 */
 .mce-content-body[data-mce-placeholder]:not(.mce-visualblocks)::before {
     color: gray;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: 0px;
 }
 
 img {
@@ -38,4 +47,38 @@ video {
 .mce-preview-object video {
     position: absolute;
     top: 0px;
+}
+
+h3.tinymce-editor-title,
+h3 {
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 32px;
+    letter-spacing: 0px;
+}
+
+p.tinymce-editor-contents,
+p {
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: 0px;
+}
+
+div.tinymce-editor-caption {
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 14px;
+    letter-spacing: 0px;
+}
+
+div.tinymce-editor-quote {
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 32px;
+    font-weight: 800;
+    line-height: 48px;
+    letter-spacing: 0px;
 }
