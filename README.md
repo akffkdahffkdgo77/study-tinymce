@@ -1,5 +1,17 @@
 <img src="https://capsule-render.vercel.app/api?section=header&type=waving&height=300&text=Study%20Editor&color=timeGradient&fontSize=90" alt="" />
 
+## 프로젝트 실행
+**node** 18.17.1
+
+```
+yarn install
+yarn start
+```
+
+## 프로젝트 데모
+
+<img width="1500" alt="데모" src="https://github.com/akffkdahffkdgo77/study-tinymce/assets/52883505/59573440-85b5-4241-ba47-f0772eb8e151">
+
 ## TIL
 
 ### Editor 기본 스타일
