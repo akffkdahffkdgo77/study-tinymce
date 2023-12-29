@@ -1,7 +1,7 @@
-<img src="https://capsule-render.vercel.app/api?section=header&type=waving&height=300&text=Study%20Editor&color=timeGradient&fontSize=90" alt="" />
+<img src="https://capsule-render.vercel.app/api?section=header&type=waving&height=300&text=Study%20Editor&color=gradient&fontSize=90&animation=fadeIn" alt="" />
 
 ## 프로젝트 실행
-**node** 18.17.1
+**node** v18.17.1
 
 ```
 yarn install
